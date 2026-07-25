@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
 
-</head>
-
-<body>
 
   <!-- Navbar -->
     <nav class="navbar">
@@ -27,5 +21,3 @@
 
 
 
-</body>
-</html>

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
 
-</head>
-<body>
 
  <!-- Footer -->
     <footer class="footer">
@@ -23,6 +18,3 @@
         </p>
 
     </footer>
-
-</body>
-</html>
