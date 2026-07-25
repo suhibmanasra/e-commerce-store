@@ -5,7 +5,12 @@ use App\Http\Controllers\ProductController;
 
 
 
-Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::get('/about', [HomeController::class, 'about'])->name('home.about');
+
+Route::Controller(ProductController::class)->group(function () {
+    Route::get('/products', 'index')->name('products.index');
+    Route::get('/products/{id}', 'show')->name('products.show');
+});
+Route::Controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home.index');
+    Route::get('/about', 'about')->name('about.about');
+});
