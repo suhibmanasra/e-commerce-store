@@ -8,11 +8,11 @@
       </div>
       <div class="w3-bar-block">
         <span class="w3-bar-item w3-padding w3-small w3-opacity" style="margin-top:8px"> MAIN NAVIGATION </span>
-       
+       <a href="{{ route('products.list') }}" class="w3-bar-item w3-button w3-padding-large w3-hover-text-primary">
+          <i class="fa fa-fw fa-table"></i>&nbsp; list of Products </a>
         <a href="{{ route('products.create') }}" class="w3-bar-item w3-button w3-padding-large w3-hover-text-primary">
           <i class="fa fa-fw fa-fire"></i>&nbsp;Create Products </a>
-        <a href="" class="w3-bar-item w3-button w3-padding-large w3-hover-text-primary">
-          <i class="fa fa-fw fa-edit"></i>&nbsp; Forms </a>
+       
         <a href="" class="w3-bar-item w3-button w3-padding-large w3-hover-text-primary">
           <i class="fa fa-fw fa-table"></i>&nbsp; Tables </a>
         <a href="" class="w3-bar-item w3-button w3-padding-large w3-hover-text-primary">

@@ -16,6 +16,11 @@
                     {{ $product['is_available'] ? 'Available' : 'Out of Stock' }}
                 </span>
             </p>
+            @if($product['image'])
+                <div class="mb-3">
+                    <img src="{{ asset('storage/' . $product['image']) }}" alt="{{ $product['name'] }}" class="img-fluid" style="max-width: 100%;">
+                </div>
+            @endif
             
             <a href="{{ route('products.index') }}" style="background-color: #6c757d; color: #fff; padding: 5px 10px; border-radius: 4px; text-decoration: none;">Back to Products</a>
         </div>

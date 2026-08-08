@@ -1,5 +1,5 @@
-@extends('dashlayout.app')   
-@section('contentdash')
+@extends('layout.app')   
+@section('content')
 
 <div class="container">
     <h1>Home</h1>

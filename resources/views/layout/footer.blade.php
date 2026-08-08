@@ -1,13 +1,10 @@
 
+ <footer class="w3-padding w3-border-top w3-center w3-white w3-margin-top">
+        
+      
+ 
 
- <!-- Footer -->
-    <footer class="footer">
-
-        <div class="footer-brand">
-           Logo
-        </div>
-
-        <div class="footer-links">
+        <div class="nav-links">
             <a href="{{ route('home.index') }}">Home</a>
             <a href="{{ route('home.about') }}">About</a>
             <a href="{{ route('products.index') }}">Products</a>

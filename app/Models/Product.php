@@ -11,7 +11,9 @@ class Product extends Model
         'name',
         'description',
         'price',
+        'user_id',
         'is_available',
+        'image',
     ];
     protected $casts = [
         'is_available' => 'boolean',
@@ -25,4 +27,8 @@ class Product extends Model
     {
         return $this->hasMany(Feedback::class);
     }
+    public function user()
+{
+    return $this->belongsTo(User::class); 
+}
 }

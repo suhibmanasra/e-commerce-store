@@ -1,161 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog</title>
-    
-    <style>
-        /* Basic Reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: #fff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff2d20;
-            text-decoration: none;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header-text {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        /* Posts Grid */
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        /* Card */
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background-color: #eee;
-            display: block;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .card-text {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .card-footer {
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
-
-        .badge {
-            background-color: #ff2d20;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 12px;
-            font-weight: bold;
-        }
-
-        /* Website Footer */
-        .footer {
-            background-color: #fff;
-            margin-top: 50px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-            color: #666;
-        }
-
-        .footer-brand {
-            color: #ff2d20;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .footer-links {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 10px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #ff2d20;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W3Admin Dashboard - Free Dashboard for HTML5/w3css by W3MIX</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="{{ asset('assets/icons/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/w3pro-4.13.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/w3-theme.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/admin-styles.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/scrollbar.css') }}">
 </head>
-<body>
+
+<body class="w3-light-grey">
+  <input id="sidebar-control" type="checkbox" class="w3-hide">
+  <div id="app">
+
     @include('layout.navbar')
+    
 
-    <main>
+    <div style="margin-top:54px">
+      <div class="w3-container w3-padding-large w3-margin-bottom">
         @yield('content')
-    </main>
-
-    @include('layout.footer')
-
-
-
+      </div>
+      @include('layout.footer')
+    </div>
+        
+  </div>
+  <script src="{{ asset('assets/plugins/chartjs/Chart.min.js') }}"></script>
+  <script src="{{ asset('assets/plugins/chartjs/dashboard.js') }}"></script>
 </body>
+
 </html>
