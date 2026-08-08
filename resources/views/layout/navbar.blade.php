@@ -39,15 +39,22 @@
             <a href= "{{ route('products.index') }}" >
                 Products
             </a>
+            @guest
             <a href= "{{ route('login.form') }}" >
                 Login
             </a>
             <a href= "{{ route('register.form') }}" >
                 Register
             </a>
+            @endguest
+            @auth
             <a href= "{{ route('products.list') }}" >
                 List Products
             </a>
+            <a href= "{{ route('logout') }}" >
+                logout
+            </a>
+            @endauth
           </div>
         </div>
       </div>

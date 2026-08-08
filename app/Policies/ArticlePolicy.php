@@ -13,6 +13,10 @@ class ArticlePolicy
      */
     public function viewAny(User $user): bool
     {
+        if ($user->role === 'admin') {
+            return true;
+        }
+       
         return false;
     }
 
@@ -21,6 +25,10 @@ class ArticlePolicy
      */
     public function view(User $user, Product $product): bool
     {
+        if ($user->role === 'admin') {
+            return true;
+        }
+      
         return false;
     }
 
@@ -29,6 +37,10 @@ class ArticlePolicy
      */
     public function create(User $user): bool
     {
+        if ($user->role === 'admin') {
+            return true;
+        }
+
         return false;
     }
 
@@ -37,6 +49,11 @@ class ArticlePolicy
      */
     public function update(User $user, Product $product): bool
     {
+        if ($user->role === 'admin'&& $user->id === $product->user_id) {
+                return true;
+              
+
+        }
         return false;
     }
 
@@ -45,6 +62,11 @@ class ArticlePolicy
      */
     public function delete(User $user, Product $product): bool
     {
+        if ($user->role === 'admin'&& $user->id === $product->user_id)  {
+                return true;
+            
+           
+        }
         return false;
     }
 
@@ -53,6 +75,9 @@ class ArticlePolicy
      */
     public function restore(User $user, Product $product): bool
     {
+        if ($user->role === 'admin') {
+            return true;
+        }
         return false;
     }
 
@@ -61,6 +86,12 @@ class ArticlePolicy
      */
     public function forceDelete(User $user, Product $product): bool
     {
+        if ($user->role === 'admin'&& $user->id === $product->user_id) {
+             
+                return true;
+            
+            
+        }
         return false;
     }
 }

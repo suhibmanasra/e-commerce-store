@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Product;
 
+
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     use AuthorizesRequests;
+    
     /**
      * Display a listing of the resource.
      */
@@ -41,7 +43,7 @@ class ProductController extends Controller
     public function create()
     {
         //
-       $this->authorize('create', $product);
+    //    $this->authorize('create', Product::class);
         return view('products.create');
     }
 
@@ -51,7 +53,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        
+       $this->authorize('create', $product);
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
